@@ -1,0 +1,150 @@
+
+.api {
+
+	$detail-background-color: #323d50;
+
+	/*@include media-breakpoint-up(md) {
+		flex-direction: column;
+	}*/
+
+	display: flex;
+	flex-direction: row;
+
+  margin: 0;
+	width: 100%;
+
+	&__documentation {
+		flex: 1;
+		width: 100%;
+	}
+
+	&__documentation-title {
+		margin-top: -8px;
+	}
+
+	&__section-info {
+		margin: $margin-lg 0;
+	}
+
+	&__section-heading {
+		font-size: 1.2em;
+		font-weight: $font-weight-bold;
+		line-height: 1;
+	}
+
+	&__section-sub-heading {
+		color: $gray;
+	}
+	
+	&__menuStay {
+        position: fixed;
+    }
+
+	&__call {
+		margin-bottom: $margin-lg;
+		position: relative;
+
+		// &:hover {
+		// 	color: $sgray;
+		// }
+	}
+
+	&__call-name {
+		font-weight: $font-weight-bold;
+	}
+
+	&__call-detail {
+		color: black;
+		cursor: pointer;
+		position: absolute;
+		right: -95%;
+		top: 3px;
+		width: 80%;
+
+		@include media-breakpoint-down(sm) {
+			color: $black;
+			margin-top: 1em;
+			position: initial;
+		}
+
+		&:hover {
+			color: $gray;
+		}
+	}
+
+	&__call-detail-indicator {
+		display: none;
+		color: black;
+		position: absolute;
+		top: .13em;
+		right: -32px;
+	}
+
+	&__call:hover &__call-detail-indicator {
+		display: inline-block;
+	}
+
+	&__call-path {
+		display: inline-block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+    width: 90%;
+    position: relative;
+    
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 15px;
+      border-radius: 4px;
+    }
+
+    button {
+      position: absolute;
+      right: 10px;
+      top: 16px;
+      color: white;
+      width: 55px;
+      height: 32px;
+      border-radius: 4px;
+      background-color: #a8a8a8;
+      border: none;
+    }
+	}
+
+	&__call-copy {
+
+		@include media-breakpoint-down(sm) {
+			position: initial;
+			display: block;
+			opacity: 0;
+		}
+
+		display: none;
+		align-items: center;
+		position: absolute;
+		right: -2em;
+		top: 0;
+	}
+
+	&__call-detail:hover &__call-copy {
+ 		display: flex;
+		opacity: 1;
+	}
+
+	&__call-copy-icon {
+		margin-right: .25em;
+	}
+
+	&__detail {
+
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+
+		background-color: $detail-background-color;
+		margin-top: 2px;
+		flex: 1;
+	}
+
+}
